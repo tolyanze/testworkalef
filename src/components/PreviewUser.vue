@@ -56,8 +56,6 @@
 export default { 
   data(){
     return{
-      userAge:'',
-      userName: 'Василий',
       arrayPreview: this.$store.state.childs
     }
   },
