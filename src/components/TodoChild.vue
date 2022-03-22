@@ -1,6 +1,6 @@
 <template>
   <div class='row mt-3 mb-2'  >
-    <div class="col-5">
+    <div class="col-sm-5">
       <label>Имя
         <input 
           class="form-control nameChild" 
@@ -11,20 +11,20 @@
         >
       </label>
     </div>
-    <div class="col-5">
+    <div class="col-sm-5">
       <label>Возраст
         <input 
           class="form-control ageChild" 
           type="number"
           name="age"
           min="0"
-          max="50"
+          max="100"
           placeholder=99 
           required
         >
       </label>
     </div>
-    <div class="col-2">
+    <div class="col-sm-2">
       <slot></slot>
     </div>
   </div>
