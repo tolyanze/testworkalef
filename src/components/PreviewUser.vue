@@ -29,11 +29,11 @@
       >
         <p class="title  mb-4">Дети</p>
         <div 
-          class="text-start"
+          class="text-start mb-2"
           v-for="item in this.$store.state.childs"
           :key="item"
         >
-          <p class="name bg">
+          <p class="name bg ">
             <span 
               v-if="item.nameChild === ''"
               class="text-danger"
