@@ -34,7 +34,26 @@
           :key="item"
         >
           <p class="name bg">
-            {{item.nameChild}}, {{item.ageChild}} {{this.declination(item.ageChild)}}
+            <span 
+              v-if="item.nameChild === ''"
+              class="text-danger"
+            >
+              Напишите имя вашего ребенка,
+            </span>
+            <span v-else>
+              {{item.nameChild}},
+            </span> 
+            <span 
+              v-if="item.ageChild <= 0"
+              class="text-danger"
+            >
+              укажите возраст вашего ребенка,
+              
+            </span>
+            <span v-else>
+              {{item.ageChild}} {{this.declination(item.ageChild)}}
+            </span> 
+            
           </p>
         </div>
       </div>
@@ -56,6 +75,8 @@
 export default { 
   data(){
     return{
+      userAge:'',
+      userName: 'Василий',
       arrayPreview: this.$store.state.childs
     }
   },
@@ -63,7 +84,10 @@ export default {
     declination(x){
       let cases = [2, 0, 1, 1, 1, 2],
           txt = ['год', 'года', 'лет' ];
+          console.log(this.$store.state.childs.nameChild);
+          console.log(this.$store.state.childs.ageChild);
       return txt[(x % 100 > 4 && x % 100 < 20) ? 2 : cases[(x % 10 < 5) ? x % 10 : 5]];
+      
     }
   }
 }
